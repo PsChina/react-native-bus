@@ -139,7 +139,7 @@ bus.emit("login", { id: 1 }); // 无响应
 ```ts
 // 移除单个监听
 const sub = bus.on("test", callback);
-bus.off("test", sub);
+bus.off("test", callback);
 
 // 移除该事件所有监听
 bus.off("test");
