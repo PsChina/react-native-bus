@@ -1,0 +1,6 @@
+# .npmignore 内容
+node_modules/
+src/
+tsconfig.json
+.gitignore
+.DS_Store
