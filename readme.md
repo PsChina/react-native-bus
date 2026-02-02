@@ -45,11 +45,12 @@ import bus from "react-native-bus"; // npm 安装引入 (全局 bus 单例)
 
 const EventBusDemo = () => {
   useEffect(() => {
-    // 1. 监听普通事件（持续监听，直到手动移除/组件卸载）
-    const subscription = bus.on("permissionChanged", (data) => {
+    const permissionChanged = (data) => {
       console.log("收到权限变化事件：", data);
       // 示例：data = { status: 'GRANTED', msg: '权限申请成功' }
-    });
+    };
+    // 1. 监听普通事件（持续监听，直到手动移除/组件卸载）
+    bus.on("permissionChanged", permissionChanged);
 
     // 2. 监听一次性事件（触发后自动移除，仅执行一次）
     bus.once("onceEvent", (msg) => {
@@ -58,7 +59,7 @@ const EventBusDemo = () => {
 
     // 组件卸载时清理监听（关键：避免内存泄漏）
     return () => {
-      bus.off("permissionChanged", subscription); // 移除指定事件监听
+      bus.off("permissionChanged", permissionChanged); // 移除指定事件监听
       // 或 清空当前组件所有监听：bus.clear();
     };
   }, []);
@@ -139,7 +140,7 @@ bus.emit("login", { id: 1 }); // 无响应
 
 ```ts
 // 移除单个监听
-const sub = bus.on("test", callback);
+bus.on("test", callback);
 bus.off("test", callback);
 
 // 移除该事件所有监听
