@@ -83,7 +83,7 @@ const EventBusDemo = () => {
 export default EventBusDemo;
 ```
 
-## API 文档P
+## API 文档
 
 ### 1. bus.on(eventName, callback)
 
