@@ -5,6 +5,7 @@ export declare class EventBus {
     private static instance;
     bus: NativeEventEmitter;
     subscriptionMap: SubscriptionMap;
+    private onceCallbackMap;
     constructor();
     on(eventName: string, callback: EventCallback): EmitterSubscription;
     emit(eventName: string, ...args: any[]): void;
