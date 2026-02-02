@@ -32,6 +32,7 @@ pnpm add react-native-bus
 ```jsx
 import { EventBus } from "react-native-bus"; // bus class
 const bus = new EventBus(); // 实例化
+const instance = EventBus.getInstance(); // 获取全局单例 与 import { bus } from "react-native-bus"; 等价
 ```
 
 ### 基础示例（函数组件 / Class 组件通用）
@@ -152,6 +153,15 @@ bus.off("test");
 ```ts
 // 页面销毁/退出登录时清空
 bus.clear();
+```
+
+### 5. EventBus.getInstance
+
+静态方法：获取全局唯一实例
+
+```ts
+import { EventBus } from "react-native-bus"; // bus class
+const bus = EventBus.getInstance();
 ```
 
 ## 注意事项

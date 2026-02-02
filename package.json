@@ -1,6 +1,6 @@
 {
   "name": "react-native-bus",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Native 事件总线",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
