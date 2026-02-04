@@ -3,9 +3,9 @@ type EventCallback = (...rest: any[]) => void;
 type SubscriptionMap = Map<string, Map<EventCallback, EmitterSubscription>>;
 export declare class EventBus {
     private static instance;
+    private onceCallbackMap;
     bus: NativeEventEmitter;
     subscriptionMap: SubscriptionMap;
-    private onceCallbackMap;
     constructor();
     on(eventName: string, callback: EventCallback): EmitterSubscription;
     emit(eventName: string, ...args: any[]): void;

@@ -16,9 +16,9 @@ interface OnceCallbackMap {
 export class EventBus {
   // 1. 私有静态实例：确保类层面唯一
   private static instance: EventBus | null = null;
+  private onceCallbackMap: OnceCallbackMap;
   bus: NativeEventEmitter;
   subscriptionMap: SubscriptionMap;
-  private onceCallbackMap: OnceCallbackMap;
   constructor() {
     this.bus = new NativeEventEmitter();
     this.subscriptionMap = new Map();

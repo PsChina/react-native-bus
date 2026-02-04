@@ -176,7 +176,7 @@ const bus = EventBus.getInstance();
 
 ```bash
 # 克隆项目
-git clone git@github-personal:PsChina/react-native-bus.git
+git clone git@github.com:PsChina/react-native-bus.git
 
 # 安装依赖
 npm install
